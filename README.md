@@ -32,4 +32,4 @@ To make the development environment work you need to add the following entries t
 
 ## NB
 Install the 'keytool' package, which is part of the standard java distribution.
-Use 'HGWPWD' as a password for certificates.
+Use 'hgwpwd' as a password for certificates.
