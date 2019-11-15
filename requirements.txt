@@ -13,5 +13,5 @@ drf-yasg
 selenium
 PyYAML==5.1.1
 urllib3==1.25.3
-pycryptodomex==3.4.7
+pycryptodomex==3.9.3
 django-webpack-loader==0.6.0
