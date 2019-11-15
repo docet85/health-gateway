@@ -16,7 +16,10 @@ To run the HGW follow this steps
         1. METHOD 1: run the script `generate_development.sh`. This will create a ca/ directory with all the necessary files
         _Use 'hgwpwd' as a password for certificates._
         2. METHOD 2: if you don't have bash (i.e., you're using Windows) you can build the docker images by running `docker build -t hgw_certs and .`
-3. Install docker and generic dependencies
+3a. (optional) install virtualenvwrapper to manage python environments:  
+    > sudo apt install virtualenvwrapper  
+    mkvirtualenv <env_name> -p python3  
+3b. Install docker and generic dependencies
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
     > `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`  
     `sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu bionic stable"`  
