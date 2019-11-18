@@ -22,14 +22,15 @@ if [ $# -ge 1 ]; then
             ;;
         -c|--clean)
             echo "Removing certs/ca"
-            rm -rf certs/ca
+            sudo rm -rf certs/ca
             echo "certs/kafka"
-            rm -rf certs/kafka
+            sudo rm -rf certs/kafka
             echo "certs/root"
-            rm -rf certs/root
+            sudo rm -rf certs/root
             echo "certs/web"
-            rm -rf certs/web
+            sudo rm -rf certs/web
             echo "...done!"
+            sleep 2
     esac
 fi
 
@@ -39,6 +40,8 @@ fi
 
 cd djangosaml2 && python3 setup.py install
 cd ../certs
+
+keytool 2>/dev/null || sudo apt install openjdk-13-jre-headless -y
 
 ./generate_development.sh
 
