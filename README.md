@@ -11,21 +11,25 @@ The development environment we'll run, with all the hgw services, one Destinatio
 To run the HGW follow this steps
 
 1. Clone the repository
-2. Create the development certs:
-    1. move into certs/ dir and then follow one of the two steps
-        1. METHOD 1: run the script `generate_development.sh`. This will create a ca/ directory with all the necessary files
-        _Use 'hgwpwd' as a password for certificates._
-        2. METHOD 2: if you don't have bash (i.e., you're using Windows) you can build the docker images by running `docker build -t hgw_certs and .`
-3a. (optional) install virtualenvwrapper to manage python environments:  
-    > sudo apt install virtualenvwrapper  
-    mkvirtualenv <env_name> -p python3  
-3b. Install docker and generic dependencies
-https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
-    > `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`  
-    `sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu bionic stable"`  
-    `sudo apt install docker-ce docker-ce-cli containerd.io docker-compose build-essential`
+2. Create the development certs move into certs/ dir and then follow one of the two steps
+    1. METHOD 1: run the script `generate_development.sh`. This will create a ca/ directory with all the necessary files
+    _Use 'hgwpwd' as a password for certificates._
+    2. METHOD 2: if you don't have bash (i.e., you're using Windows) you can build the docker images by running `docker build -t hgw_certs and .`
+3.
+    1. (optional) install virtualenvwrapper to manage python environments:
+    
+            sudo apt install virtualenvwrapper  
+            mkvirtualenv <env_name> -p python3
+         
+    2. Install docker and generic dependencies
+    https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+     
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
+            sudo add-apt-repository "deb https://download.docker.com/linux/ubuntu bionic stable"  
+            sudo apt install docker-ce docker-ce-cli containerd.io docker-compose build-essential
 4. Move to `docker/environments/integration` directory and to run all the services launch
-    >`make run_with_tscns`
+
+            make run_with_tscns
 
 ## File host
 To make the development environment work you need to add the following entries to your file host:
