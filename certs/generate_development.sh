@@ -24,6 +24,8 @@ function usage {
     echo " -h       print this message"
 }
 
+OUTPUT_DIR=""
+
 if [ $# -ge 1 ]; then
     case "$1" in
         -h)
@@ -50,4 +52,6 @@ cp -r web ca/
 ./generate_web_certs.sh hgwbackend_client ca/web/certs/hgwbackend/source_endpoint_mockup_client true
 ./generate_web_certs.sh tscns ca/web/certs/tscns/idp_server true
 
-mv ca/* $OUTPUT_DIR
+if [ "$OUTPUT_DIR" != "" ]
+    mv ca/* $OUTPUT_DIR
+fi

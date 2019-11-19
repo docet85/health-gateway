@@ -50,10 +50,9 @@ To make the development environment work you need to add the following entries t
 ## Interaction with local env
 To interact with the local environment, the endpoints are as it follows:
 
-    ##    REST    ##         ##   ADMIN    ##
-    consentmanager
-    hgwfrontend:8000        hgwfrontend:8000/login
-    hgwbackend:8002         hgwfrontend:8002/admin
+    https://hgwfrontend:8000
+    https://consentmanager:8002
+    https://hgwbackend:8003
     
      
 
