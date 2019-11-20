@@ -48,3 +48,7 @@ keytool 2>/dev/null || sudo apt install openjdk-13-jre-headless -y
 
 mkdir -p ca/kafka/certs
 sudo cp -r kafka/certs/* ca/kafka/certs
+
+for TGT_HOST in consentmanager destinationmockup spid-testenv-identityserver spid-testenv-backoffice hgwbackend
+hgwfrontend kafka tscns; do
+    ping ${TGT_HOST} -c 1 2>&1 1>/dev/null || sudo bash -c 'echo "127.0.0.1 ${TGT_HOST}" >> /etc/hosts'

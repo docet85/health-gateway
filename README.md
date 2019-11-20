@@ -45,6 +45,7 @@ To make the development environment work you need to add the following entries t
     127.0.0.1 hgwbackend
     127.0.0.1 hgwfrontend
     127.0.0.1 kafka
+    127.0.0.1 tscns
 
 
 ## Interaction with local env
@@ -53,6 +54,12 @@ To interact with the local environment, the endpoints are as it follows:
     https://hgwfrontend:8000
     https://consentmanager:8002
     https://hgwbackend:8003
+   
+to use Postman, go to:
+    
+    File > Settings > General > SSL Certificate Verification
+    
+and turn it **OFF**
     
      
 
