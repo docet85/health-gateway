@@ -44,7 +44,7 @@ fi
 
 ./generate_all.sh destinationmockup i2b2-destination source-endpoint-mockup integration-rest-destination
 
-cp -r web ca/
+mv -r web ca/
 
 ./generate_ts_cns_saml_certs.sh
 
@@ -52,6 +52,6 @@ cp -r web ca/
 ./generate_web_certs.sh hgwbackend_client ca/web/certs/hgwbackend/source_endpoint_mockup_client true
 ./generate_web_certs.sh tscns ca/web/certs/tscns/idp_server true
 
-if [ "$OUTPUT_DIR" != "" ]
+if [ "$OUTPUT_DIR" != "" ]; then
     mv ca/* $OUTPUT_DIR
 fi
