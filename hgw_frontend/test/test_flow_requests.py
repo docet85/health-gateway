@@ -786,7 +786,7 @@ class TestFlowRequestAPI(TestCase):
         res = self.client.get(
             '/v1/flow_requests/consents_confirmed/?success=true&consent_confirm_id={}'.format(CORRECT_CONFIRM_ID))
 
-        redirect_url = '{}?process_id={}&success=true'.format(c.destination_endpoint_callback_url,
+        redirect_url = '{}?process_id={}&status=ok&success=true'.format(c.destination_endpoint_callback_url,
                                                               c.flow_request.process_id)
         self.assertRedirects(res, redirect_url, fetch_redirect_response=False)
         flow_request = c.flow_request
@@ -833,7 +833,7 @@ class TestFlowRequestAPI(TestCase):
             self.assertEqual(c.flow_request.status, FlowRequest.ACTIVE)
             self.assertEqual(c.channel.status, Channel.CONSENT_REQUESTED)
 
-        redirect_url = '{}?process_id={}&success=true'.format(c.destination_endpoint_callback_url,
+        redirect_url = '{}?process_id={}&status=ok&success=true'.format(c.destination_endpoint_callback_url,
                                                               c.flow_request.process_id)
         self.assertRedirects(res, redirect_url, fetch_redirect_response=False)
 
