@@ -19,7 +19,7 @@ if (cookies != null) {
         }
     }
 }
-
+//request.setAttribute("javax.servlet.request.X509Certificate", null);
 final String key = ExternalAuthentication.startExternalAuthentication(request);
 final ProfileRequestContext prc = ExternalAuthentication.getProfileRequestContext(key, request);
 final AuthenticationContext authnContext = prc.getSubcontext(AuthenticationContext.class);
@@ -50,7 +50,7 @@ final boolean identifiedRP = rpUIContext != null && !rpContext.getRelyingPartyId
         <div class="column one">
           <form id="loginform" action="<%= request.getContextPath() %>/Authn/X509" method="post">
 
-            <input type="hidden" name="<%= ExternalAuthentication.CONVERSATION_KEY %>" 
+            <input type="hidden" name="<%= ExternalAuthentication.CONVERSATION_KEY %>"
               value="<%= request.getParameter(ExternalAuthentication.CONVERSATION_KEY) %>">
 
             <% if (identifiedRP) { %>
@@ -72,8 +72,12 @@ final boolean identifiedRP = rpUIContext != null && !rpContext.getRelyingPartyId
               </div>
             </div>
             <br />
-            <div class="form-element-wrapper col-sm-4 col-sm-offset-4 text-center">
-              <button class="form-element form-button" type="submit" name="login" value="1" tabindex="1" accesskey="l">TS/CNS
+            <div class="form-element-wrapper col-sm-4 col-sm-offset-2 text-center">
+              <button class="form-element form-button" type="submit" name="_eventId_NoCredentials" value="1" tabindex="1" accesskey="b">
+                Back</button>
+            </div>
+            <div class="form-element-wrapper col-sm-4 col-sm-offset-1 text-center">
+              <button class="form-element form-button" type="submit" name="login" value="1" tabindex="2" accesskey="l">TS/CNS
                 Login</button>
             </div>
 

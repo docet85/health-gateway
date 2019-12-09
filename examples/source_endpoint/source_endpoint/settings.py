@@ -136,7 +136,8 @@ MAX_API_VERSION = 1
 SOURCE_ID = cfg['source']['id']
 
 # OAUTH2 CONFIG
-SCOPES = {'read': 'Read scope', 'write': 'Write scope'}
+# SCOPES = {'read': 'Read scope', 'write': 'Write scope'}
+SCOPES = {'sourceendpoint-connector-read': 'Read scope', 'sourceendpoint-connector-write': 'Write scope'}
 OAUTH2_PROVIDER = {
     'SCOPES': SCOPES,
     'DEFAULT_SCOPES': SCOPES.keys()

@@ -61,12 +61,12 @@ NAME=$2
 SURNAME=$3
 FISCAL_CODE=$4
 
-create_cert $OUTDIR $NAME $SURNAME $FISCAL_CODE
-#create_cert "cesare" "Giulio" "Cesare" "CSRGGL44L13H501E"
+#create_cert $OUTDIR $NAME $SURNAME $FISCAL_CODE
+create_cert "cesare" "Giulio" "Cesare" "CSRGGL44L13H501E"
 #create_cert "darco" "Giovanna" "D'Arco" "DRCGNN12A46A326K"
 #create_cert "lucrezia" "Lucrezia" "Borgia" "BRGLRZ80D58H501Q"
 #create_cert "cristoforocolombo" "Cristoforo" "Colombo" "CLMCST42R12D969Z"
 #create_cert "fieramosca" "Ettore" "Fieramosca" "FRMTTR76M06B715E"
 #create_cert "cleopatra" "Filopatore" "Cleopatra" "FLPCPT69A65Z336P"
-#create_cert "marcopolo" "Marco" "Polo" "PLOMRC01P30L736Y"
+create_cert "marcopolo" "Marco" "Polo" "PLOMRC01P30L736Y"
 #create_cert "montessori" "Maria" "Montessori" "MNTMRA03M71C615V"

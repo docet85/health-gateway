@@ -24,7 +24,5 @@
     SSLOptions +ExportCertData +StdEnvVars
     SSLVerifyDepth 4
     RewriteEngine On
-    RewriteCond %{SSL:SSL_CLIENT_VERIFY} !^SUCCESS$
-    RewriteRule .* "/nocert.html" [L]
   </Location>
 </VirtualHost>

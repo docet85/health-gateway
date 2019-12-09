@@ -222,7 +222,7 @@ STATICFILES_DIRS = (
     # ('hgw_frontend', os.path.abspath(os.path.join(BASE_DIR, '../static/'))),
 )
 LOGIN_URL = '/saml2/login/'
-# LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 SESSION_COOKIE_NAME = 'hgw_frontend'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -249,6 +249,8 @@ else:
 SAML_AUTHN_CUSTOM_ARGS = {
     'attribute_consuming_service_index': '1'
 }
+
+SAML_ACS_FAILURE_RESPONSE_FUNCTION = 'hgw_frontend.views.site.saml_redirect_failures'
 
 # OAUTH2 CONFIGURATIONS
 FLOW_REQUESTS_SCOPES = {

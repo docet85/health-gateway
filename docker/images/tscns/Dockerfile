@@ -58,6 +58,7 @@ COPY conf/shibboleth/subject-c14n.xml /opt/shibboleth-idp/conf/c14n/subject-c14n
 COPY conf/shibboleth/global.xml /opt/shibboleth-idp/conf/global.xml
 COPY conf/shibboleth/attribute-resolver.xml /opt/shibboleth-idp/conf/attribute-resolver.xml
 COPY conf/shibboleth/attribute-filter.xml /opt/shibboleth-idp/conf/attribute-filter.xml
+COPY conf/shibboleth/errors.xml /opt/shibboleth-idp/conf/errors.xml
 COPY conf/shibboleth/metadata-providers.xml.template /opt/shibboleth-idp/conf/metadata-providers.xml.template
 COPY conf/shibboleth/idp.properties.template /opt/shibboleth-idp/conf/idp.properties.template
 COPY conf/shibboleth/web.xml /opt/shibboleth-idp/webapp/WEB-INF/web.xml
