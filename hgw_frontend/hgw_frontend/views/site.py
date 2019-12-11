@@ -55,9 +55,17 @@ def saml_redirect_failures(request, **kwargs):
 
     parsed_relay_state_url = urlparse.urlparse(relay_state)
     callback = parse_qs(parsed_relay_state_url.query)['callback_url'][0]
-    logger.debug(callback)
+
     fr_confirm_code = parse_qs(parsed_relay_state_url.query)['confirm_id'][0]
-    logger.debug(fr_confirm_code)
+
+    return cancel_flow_request(fr_confirm_code, callback)
+
+
+def saml_cancel_login(request, **kwargs):
+    return cancel_flow_request(request.GET['confirm_id'], request.GET['callback_url'])
+
+
+def cancel_flow_request(fr_confirm_code, callback):
     cc = ConfirmationCode.objects.get(code=fr_confirm_code)
 
     output_success = False

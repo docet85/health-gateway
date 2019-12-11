@@ -24,7 +24,7 @@ from rest_framework import routers
 from hgw_common.settings import VERSION_REGEX
 from hgw_frontend import settings
 from hgw_frontend.views import Profiles
-from .views import confirm_request, consents_confirmed, FlowRequestView, Messages, Sources, ChannelView
+from .views import confirm_request, consents_confirmed, FlowRequestView, Messages, Sources, ChannelView, saml_cancel_login
 
 # Routers provide an easy way of automatically determining the URL conf
 router = routers.DefaultRouter()
@@ -36,6 +36,7 @@ urlpatterns = [
     path(r'oauth2/', include('oauth2_provider.urls')),
     path(r'protocol/', include('hgw_common.urls')),
     path(r'{}/flow_requests/confirm/'.format(VERSION_REGEX), confirm_request),
+    path(r'{}/flow_requests/cancel/'.format(VERSION_REGEX), saml_cancel_login),
     path(r'{}/flow_requests/consents_confirmed/'.format(VERSION_REGEX), consents_confirmed),
     path(r'{}/flow_requests/search/'.format(VERSION_REGEX), FlowRequestView.as_view({'get': 'search'}),
         name='flow_requests_search'),
